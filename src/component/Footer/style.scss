@@ -1,0 +1,216 @@
+@mixin centers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dear {
+  &__change {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 22px 0;
+
+    &--icon {
+      font-size: 2rem;
+    }
+    &--free {
+      display: flex;
+      align-items: center;
+      margin: 0 160px;
+      transition: all 1.4s;
+      img {
+        height: 20px;
+      }
+      p {
+        margin: 0;
+      }
+      .bold_text {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+    }
+    &--boder {
+      overflow-x: hidden;
+      box-sizing: border-box;
+      display: flex;
+      position: relative;
+    }
+  }
+  &__grid {
+    display: flex;
+    justify-content: center;
+    &-content {
+      .img_bn {
+        width: 100%;
+        height: 100%;
+      }
+      .border_content {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        height: 1px;
+        border-top: 1px solid black;
+      }
+    }
+  }
+
+  &__banner {
+    margin-top: 10px;
+    &-text {
+      height: 55px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 400;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    &-img {
+      display: flex;
+      .banner-one {
+        flex-basis: 100%;
+        overflow: hidden;
+
+        img {
+          height: 292px;
+          width: 100%;
+          transition: all 0.5s;
+        }
+        &:hover img {
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+  }
+  &__info {
+    @include centers();
+    height: 75px;
+    &-one {
+      @include centers();
+      justify-content: space-between;
+      .one-left {
+        span {
+          font-weight: 300;
+        }
+      }
+      .one-right {
+        &-input {
+          width: 470px;
+          height: 35px;
+          margin-right: 10px;
+          border: 1px solid #cccccc;
+          padding-left: 15px;
+          font-weight: 520;
+        }
+        &-button {
+          width: 200px;
+          height: 35px;
+          color: white;
+          background-color: red;
+          border: none;
+          .bt-icon {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    background-color: #fafafa;
+    @include centers();
+    &-ul {
+      margin-top: 62px;
+      margin-bottom: 60px;
+      padding: 0;
+      list-style: none;
+      li:first-child {
+        font-size: 1.9rem;
+        margin-bottom: 25px;
+      }
+      li > a {
+        color: #375c5c;
+        transition: color 0.5s;
+        &:hover {
+          color: red;
+          text-decoration: none;
+        }
+      }
+      li {
+        margin-bottom: 20px;
+      }
+      .li-img {
+        width: 160px;
+        height: 100px;
+      }
+      .li-p {
+        line-height: 30px;
+      }
+    }
+    .img-top {
+      margin-top: 30px;
+    }
+  }
+  &__end {
+    @include centers();
+    height: 120px;
+    background-color: #212121;
+    &-ct {
+      display: flex;
+      align-items: center;
+    }
+    &-two {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .img_dangky {
+        margin-right: 20px;
+      }
+
+      .text_day {
+        width: 320px;
+        p {
+          text-align: center;
+          font-size: 1.2rem;
+          color: white;
+          font-weight: lighter;
+        }
+      }
+    }
+    .dk-one {
+      a {
+        color: white;
+        margin-right: 20px;
+        font-weight: lighter;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .dk-two {
+      color: white;
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+  }
+}
+.ss {
+  position: absolute;
+  transform: translateX(135%);
+}
+.tt {
+  transform: translateX(0);
+}
+.slow_change {
+  transform: translateX(-135%);
+}
+.slow_changes {
+  transform: translateX(0);
+}

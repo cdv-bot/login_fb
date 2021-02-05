@@ -1,0 +1,85 @@
+.header {
+    height: 38px;
+    background-color: #000000;
+    &__content {
+        margin: auto auto;
+        &-ul {
+            list-style: none;
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            padding: 0;
+            margin-bottom: 0;
+            li,
+            .li_g {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding: 0 13px;
+
+                a {
+                    font-size: 1.4rem;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+            .li_hover {
+                margin-right: 12px;
+                transition: background 0.5s;
+            }
+
+            .li_hover:hover {
+                background-color: white;
+                a {
+                    color: black;
+                }
+            }
+            .line_li {
+                position: relative;
+            }
+            .li_g {
+                margin-right: 10px;
+                color: #fff;
+            }
+        }
+        &-line {
+            padding-left: 10px;
+            padding-right: 10px;
+            position: absolute;
+            top: 50%;
+            right: 39%;
+            height: 18px;
+            transform: translateY(-50%);
+            border-left: 1px solid white;
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .header {
+        height: 75px;
+        &__content {
+            .header__content-ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                li,
+                .li_g {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 13px;
+                }
+                li {
+                    height: 50%;
+                }
+                .line_li {
+                    margin-left: -13px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 990px) {
+    .header {
+        display: none;
+    }
+}

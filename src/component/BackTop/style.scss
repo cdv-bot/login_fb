@@ -1,0 +1,130 @@
+.back_top {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  z-index: 9000000;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 25px;
+  top: 100%;
+  transform: translateY(100%);
+  transition: transform 1s;
+  .icon_top {
+    color: white;
+    font-size: 15px;
+  }
+}
+.bell_left {
+  position: fixed;
+  cursor: pointer;
+  left: 25px;
+  bottom: 70px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before {
+    position: absolute;
+    z-index: 100;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    content: "";
+    border: 1px solid white;
+  }
+  .icon_bell {
+    font-size: 16px;
+    color: white;
+  }
+  .notification {
+    height: 90px;
+    width: 250px;
+    position: absolute;
+    left: 2px;
+    bottom: 46px;
+    background-color: #fefefe;
+    box-shadow: 0px 0px 1px 2px#e5e2e4;
+    border-radius: 5px;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 9px;
+      width: 12px;
+      height: 12px;
+      background-color: #fefefe;
+      transform: rotate(45deg);
+      box-shadow: 2px 2px #e5e2e4;
+    }
+    .text__noti {
+      &-tt {
+        text-align: center;
+        color: red;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &-line {
+        border-top: 1px solid #e5e2e4;
+        margin-bottom: 5px;
+      }
+      &-tb {
+        text-align: center;
+        font-size: 1.4rem;
+      }
+    }
+    .x_top {
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      line-height: 15px;
+      text-align: center;
+      border-radius: 50%;
+      color: white;
+      position: absolute;
+      right: -8px;
+      top: -8px;
+    }
+  }
+  .show_noti {
+    display: block;
+    animation-name: zoom;
+    animation-duration: 0.4s;
+  }
+  .hide_noti {
+    display: block;
+    animation-name: zoom1;
+    animation-duration: 0.4s;
+    transform: scale(0);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes zoom1 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.show_top {
+  display: flex;
+  transform: translateY(-300%);
+}

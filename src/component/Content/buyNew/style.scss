@@ -1,0 +1,114 @@
+.New {
+  margin-top: 10px;
+  &__sper {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    &-bitti {
+      width: 219px;
+      height: 30px;
+      background-color: royalblue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+        text-decoration: none;
+      }
+    }
+  }
+  &__img {
+    .clm_img {
+      img {
+        width: 100%;
+      }
+    }
+    .sale {
+      &__content {
+        display: flex;
+        &-img {
+          margin-right: 15px;
+          position: relative;
+          img {
+            width: 203px;
+            height: 206px;
+          }
+          &:hover .sale__content-before {
+            height: 206px;
+            .all_share {
+              display: flex;
+            }
+          }
+        }
+        &-text {
+          .link_text {
+            a {
+              text-decoration: none;
+              font-weight: bold;
+              font-size: 1.5rem;
+              color: black;
+              transition: color 0.7s;
+              &:hover {
+                color: red;
+              }
+            }
+          }
+          .text_new {
+            margin-top: 5px;
+            span {
+              font-size: 1.3rem;
+            }
+          }
+        }
+        &-before {
+          position: absolute;
+          width: 203px;
+          height: 0;
+          background-color: black;
+          opacity: 0.5;
+          z-index: 100;
+          bottom: 0;
+          right: 0;
+          transition: height 0.7s;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .all_share {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            .all_icon {
+              .icon_sale {
+                width: 23px;
+                height: 23px;
+                margin-right: 30px;
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
+            .text_share {
+              color: white;
+              font-size: 1.4rem;
+              margin: 10px 0;
+            }
+            .flus {
+              width: 23px;
+              height: 23px;
+              background-color: white;
+              border-radius: 50%;
+              text-align: center;
+              font-size: 2rem;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

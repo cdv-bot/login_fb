@@ -1,0 +1,34 @@
+.menu_ul-two {
+  transform: translateX(100%);
+  transition: all 1s;
+
+  li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 40px;
+    border-bottom: 1px dashed #bfbfc1;
+  }
+  li > a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    font-size: 1.2rem;
+  }
+  .menu_li-one {
+    cursor: pointer;
+    .menu_two {
+      margin-right: 15px;
+    }
+  }
+  li > .text_li {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .menu_li {
+    .menu_two {
+      margin-left: 10px;
+    }
+  }
+}
