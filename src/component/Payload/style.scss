@@ -1,0 +1,8 @@
+@mixin centers {
+  display: flex;
+  justify-content: center;
+}
+
+.Pay {
+  @include centers();
+}

@@ -1,4 +1,4 @@
-import { faChevronLeft, faChevronRight, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,16 +13,10 @@ import st6 from './../Image/baner/st6.jpg';
 import st7 from './../Image/baner/st7.jpg';
 import content_center from './../Image/contents.jpg';
 import content_center1 from './../Image/contents1.jpg';
-import dadangky from './../Image/dadangky.png';
-import logo_bitis from './../Image/logo_bitis.png';
 import Icon_free from './../Image/Slider/icon_free.jpg';
+import All from './All';
 import BuyNew from './buyNew';
-import ListBuy from './buy_icon';
-import ListBuyBoy from './buy_icon_boy';
-import ListBuyGirl from './buy_icon_girl';
 import ListBuyGosto from './buy_icon_gosto';
-import ListBuyNu from './buy_icon_nu';
-import ListBuyPhuKien from './buy_icon_phulien';
 import Sliders from './slider';
 import './style.scss';
 
@@ -120,22 +114,22 @@ function Content(props) {
             </Grid>
           </div>
           <div className="">
-            <ListBuy />
-            <ListBuyNu />
-            <ListBuyPhuKien />
-            <ListBuyGosto />
+            <All name="NAM" />
+            <All name="NỮ" />
+            <All name="PHỤ KIỆN" />
+            <All name="BÉ TRAI" />
           </div>
           <div className="content_ct">
             <img alt="img" src={content_center} />
           </div>
           <div>
-            <ListBuyBoy />
+            <ListBuyGosto />
           </div>
           <div className="content_ct">
             <img alt="img" src={content_center1} />
           </div>
           <div>
-            <ListBuyGirl />
+            <All name="BÉ GÁI" />
           </div>
           <div>
             <BuyNew />

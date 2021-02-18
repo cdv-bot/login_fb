@@ -65,7 +65,8 @@ function ListBuyGosto(props) {
       img: st2,
       sort: "Hunter Nam",
       price: "99,000"
-    }
+    },
+
   ];
 
   const handerLeft = () => {

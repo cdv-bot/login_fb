@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './style.scss';
 import st2 from './../../Image/baner/st1.jpg';
 import st3 from './../../Image/baner/st3.jpg';
 import st4 from './../../Image/baner/st4.jpg';
 import arrow from './../../Image/arrow.jpg';
+import { cartProducts } from './../../Actions';
 import classNames from 'classnames';
 
-function All(props) {
+function All({ name }) {
+  const dispatch = useDispatch();
   const [sliderRun, setSliderRun] = useState({
     right: 0
   });
@@ -22,7 +25,7 @@ function All(props) {
       title: " Giày Thể Thao Nam Biti's Hunter X Festive Aurora Black DSMH03401XDG (xanh Dương)",
       img: st2,
       sort: "Hunter Nam",
-      price: "999,000",
+      price: 999000,
       list: "products",
       msp: "DSMH03401XDG44"
     },
@@ -31,11 +34,46 @@ function All(props) {
       title: " Giày Thể Thao Nam Biti's Hunter X Festive Aurora Black DSMH03401XDG (xanh Dương)",
       img: st2,
       sort: "Hunter Nam",
-      price: "99,000",
+      price: 99000,
       list: "products",
       msp: "DSMH03401XDG44"
     },
-
+    {
+      id: 3,
+      title: " Giày Thể Thao Nam Biti's Hunter X Festive Aurora Black DSMH03401XDG (xanh Dương)",
+      img: st2,
+      sort: "Hunter Nam",
+      price: 99000,
+      list: "products",
+      msp: "DSMH03401XDG44"
+    },
+    {
+      id: 4,
+      title: " Giày Thể Thao Nam Biti's Hunter X Festive Aurora Black DSMH03401XDG (xanh Dương)",
+      img: st2,
+      sort: "Hunter Nam",
+      price: 99000,
+      list: "products",
+      msp: "DSMH03401XDG44"
+    },
+    {
+      id: 5,
+      title: " Giày Thể Thao Nam Biti's Hunter X Festive Aurora Black DSMH03401XDG (xanh Dương)",
+      img: st2,
+      sort: "Hunter Nam",
+      price: 99000,
+      list: "products",
+      msp: "DSMH03401XDG44"
+    },
+    {
+      id: 6,
+      title: " Giày Thể Thao Nam Biti's Hunter X Festive Aurora Black DSMH03401XDG (xanh Dương)",
+      img: st2,
+      sort: "Hunter Nam",
+      price: 999000,
+      list: "products",
+      msp: "DSMH03401XDG44"
+    },
   ];
 
   const handerLeft = () => {
@@ -66,7 +104,14 @@ function All(props) {
       indexs: y
     });
   };
+  // ------------submit
 
+  const submitItem = item => {
+    dispatch(cartProducts({
+      product: item,
+      size: boders.boders
+    }))
+  };
   const as = () => {
     let b = arr.map((key, index) => {
       return <div className="List__item-one" style={{ transform: `translateX(-${sliderRun.right}px)` }} key={index}>
@@ -94,12 +139,15 @@ function All(props) {
         </div>
         <div className="title_center">
           <a href="/#">{key.sort}</a>
+          <span className="msp">{key.msp}</span>
         </div>
         <div className="count">
           <span>{`${key.price} đ`}</span>
         </div>
         <div className="bt_a">
-          <button>Đặt Mua Ngay</button>
+          {
+            (boders.indexs === index) ? <button onClick={() => submitItem(key)}>Đặt Mua Ngay</button> : <button>Mua Hàng</button>
+          }
         </div>
       </div>;
     });
@@ -111,8 +159,8 @@ function All(props) {
       <div className="List__title">
         <div className="List__title-name">
           <a href="/#" className="names">
-            BÉ TRAI
-         </a>
+            {name}
+          </a>
         </div>
       </div>
       <div className="List__item">

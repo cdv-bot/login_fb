@@ -25,6 +25,8 @@
     &-slider {
       display: flex;
       overflow-x: hidden;
+      overflow-y: hidden;
+      height: 450px;
       .arrow_left,
       .arrow_right {
         position: absolute;
@@ -128,6 +130,8 @@
       }
       .title_center {
         margin-top: 2px;
+        display: flex;
+        justify-content: space-between;
         a {
           color: black;
           font-weight: 100;
@@ -135,6 +139,9 @@
           &:hover {
             text-decoration: none;
           }
+        }
+        .msp {
+          font-size: 1.1rem;
         }
       }
       .count {

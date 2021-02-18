@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faHeart, faShoppingCart, faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
 import MobileMenu from './Mobile_Menu';
 import classNames from 'classnames';
+import ProductItem from './productItem';
 
 function Menu(props) {
   const [lock, setLock] = useState(false);
@@ -58,56 +59,7 @@ function Menu(props) {
               </div>
             </div>
           </div>
-          <div className="Nav__menu-buy">
-            <div className="buy_heart">
-              <FontAwesomeIcon className="icon_buy-icon icon_heart" icon={faHeart} />
-            </div>
-            <div className="buy_icon">
-              <a href="/#">
-                <FontAwesomeIcon className="icon_buy-icon" icon={faShoppingCart} />
-              </a>
-              <div className="buy_icon-number">
-                <span>2</span>
-              </div>
-              <div className="buy_icon-hover">
-                <div className="arrow-up"></div>
-                <div className="shop_buy-hover">
-                  <div className="all_item">
-                    <div className="shop_buy">
-                      <div className="shop_buy-img">
-                        <img alt="img" src="https://picsum.photos/71/" />
-                      </div>
-                      <div className="shop_buy-product">
-                        <a href="/#">Giày Thể Thao Nam Biti's Hunter Core Festive Breezer Black DSMH04200DEN (Đen) - Đen,43</a>
-                        <div className="number_price">
-                          <div className="number_price-one">1</div>
-                          <div className="number_price-two">199,000<ins>đ</ins></div>
-                        </div>
-                      </div>
-                      <div className="shop_buy-close">
-                        <FontAwesomeIcon className="icon_close" icon={faTimes} />
-                      </div>
-                    </div>
-                    <div className="shop_buy-line"></div>
-                  </div>
-                </div>
-
-                <div className="shop_buy-total">
-                  <div className="line_total"></div>
-                  <div className="total_buy">
-                    <div className="total_buy-text">
-                      <span className="total-money">Tổng tiền:</span>
-                      <span className="number-money">1,698,000 <ins>đ</ins></span>
-                    </div>
-                    <div className="total_buy-button">
-                      <button className="bt bt-one">XEM GIỎ HÀNG</button>
-                      <button className="bt bt-two">THANH TOÁN</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProductItem />
         </div>
       </div>
     </>

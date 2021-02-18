@@ -1,22 +1,16 @@
-import React from 'react';
+import React, { Suspense, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, useLocation, useParams } from "react-router-dom";
 import './App.scss';
 import BackTop from './component/BackTop';
-import Content from './component/Content';
 import Footer from './component/Footer';
 import Header from "./component/Header";
 import Menu from "./component/Menu";
+import PayLoad from './component/Payload';
 import Page from "./component/Router";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch
-} from "react-router-dom";
-import BuyInfo from './component/Buy_info';
-import { Suspense } from 'react';
 
 function App() {
+  const [checkPay, setCheckPay] = useState(false);
+
 
   const PageRouter = (Page) => {
     let result = null;
@@ -31,19 +25,16 @@ function App() {
     return result;
   }
 
+
+  const show = () => {
+    setCheckPay(true);
+  }
   return (
     <Router>
-      <Header />
       <Menu />
+      <Header />
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          {/* <Route exact path="/">
-          <Content />
-        </Route>
-        <Route exact path="/products/:id">
-          <BuyInfo />
-        </Route>
-         */}
           {
             PageRouter(Page)
           }
