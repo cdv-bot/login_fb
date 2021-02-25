@@ -3,15 +3,27 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  transition: all 12s;
   .Nav__menu {
     display: flex;
     height: 100%;
     // background-color: red;
     &-icon {
-      display: none;
+      display: block;
+      // position: fixed;
       .mobile_menu {
-        display: none;
+        display: block;
+      }
+      .black_right {
+        right: 0;
+        width: calc(100px-20px);
+        position: fixed;
+        height: 100vh;
+        z-index: 10;
+        background-color: black;
+        opacity: 0.4;
+        width: calc(100% - 301px);
+        transform: translateX(100%);
+        transition: transform 1s;
       }
     }
     &-iconMenu {
@@ -19,7 +31,7 @@
     }
     &-logo {
       width: 200px;
-      margin-left: 10px;
+      margin-left: 6px;
       .logo {
         img {
           width: 100px;
@@ -301,7 +313,8 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+//tablet
+@media only screen and (max-width: 48em) {
   .Content {
     height: 200px;
     .Nav__menu {
@@ -311,10 +324,17 @@
       justify-content: space-between;
       padding-top: 10px;
       &-icon {
-        display: none;
+        display: block;
       }
       &-logo {
         width: 163px;
+      }
+      &-iconMenu {
+        display: block;
+        .icon_menu {
+          width: 30px;
+          height: 30px;
+        }
       }
       .menu {
         margin-right: 114px;
@@ -332,16 +352,16 @@
     }
   }
 }
-@media only screen and (max-width: 990px) {
+
+//mobile
+@media only screen and (max-width: 25.875em) {
   .Content {
     height: 80px;
-
     .Nav__menu {
       display: flex;
       height: 100%;
       justify-content: space-between;
       align-items: center;
-      padding: 0 10px;
       position: relative;
       transition: all 1s;
       &-logo {
@@ -362,14 +382,15 @@
     transform: translate3d(0, 0, 0) !important;
   }
   .showMenus {
-    transform: translateX(70%);
+    // transform: translateX(39%);
   }
 }
+
 .Nav__menu-icon {
   display: block;
   .icon_menu {
-    width: 22px;
-    height: 23px;
+    width: 55px;
+    height: 55px;
     color: #696969;
   }
   .mobile_menu {
@@ -380,8 +401,9 @@
     height: 100vh;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -10px;
     bottom: 0;
+    z-index: 100000;
   }
 }
 

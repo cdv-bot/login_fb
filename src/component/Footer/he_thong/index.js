@@ -17,7 +17,7 @@ function HeThong(props) {
           </div>
           <div className="System__map">
             <Grid container className="custom" spacing={2} >
-              <Grid item xs={12} sm={7}>
+              <Grid item xs={12} sm={7} className="grid-full">
                 <div className="img_map">
                   <img alt="img" src={map} />
                 </div>

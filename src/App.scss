@@ -4,16 +4,17 @@
   box-sizing: border-box;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 48.125em) {
   .grid {
-    width: 950px;
+    max-width: 730px;
     height: 100%;
     box-sizing: border-box;
   }
 }
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 25.875em) {
   .grid {
-    max-width: 750px;
+    min-width: 390px;
+    width: 390px;
     height: 100%;
     box-sizing: border-box;
   }

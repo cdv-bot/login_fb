@@ -84,3 +84,28 @@
     }
   }
 }
+
+@media only screen and (max-width: 48em) {
+  .dear__grid {
+    .custom {
+      display: flex;
+      flex-direction: column;
+    }
+    .MuiGrid-grid-sm-7 {
+      max-width: 100% !important;
+    }
+    .MuiGrid-grid-sm-5 {
+      max-width: 100% !important;
+    }
+
+    .MuiGrid-grid-xs-3 {
+    }
+  }
+}
+// @media only screen and (max-width: 45.5625em) {
+//   .grid {
+//     max-width: 250px;
+//     height: 100%;
+//     box-sizing: border-box;
+//   }
+// }

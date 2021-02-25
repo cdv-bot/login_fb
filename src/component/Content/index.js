@@ -21,21 +21,7 @@ import Sliders from './slider';
 import './style.scss';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    height: 'auto',
-    boxSizing: 'border-box'
-  },
-  space: {
-    height: '100%'
-  },
-  top: {
-    height: '180px',
-    marginBottom: '10px'
-  },
-  right: {
-    paddingRight: "5px"
-  }
+
 }));
 
 function Content(props) {
@@ -54,12 +40,12 @@ function Content(props) {
           <div className={classNames("dear__change--free tt", { slow_change: sliderLeft })}>
             <img alt="img" src={Icon_free} />
             <p className="bold_text">ĐỔI SIZE MIỄN PHÍ</p>
-            <p>Tại tất cả các cửa hàng, trong vòng 1 tuần</p>
+            <p className="all-text">Tại tất cả các cửa hàng, trong vòng 1 tuần</p>
           </div>
           <div className={classNames("dear__change--free ss", { slow_changes: sliderLeft })}>
             <img alt="img" src={Icon_free} />
             <p className="bold_text">ĐỔI SIZE MIỄN PHÍ</p>
-            <p>Tại tất cả các cửa hàng, trong vòng 1 tuần</p>
+            <p className="all-text">Tại tất cả các cửa hàng, trong vòng 1 tuần</p>
           </div>
         </div>
         <FontAwesomeIcon className="dear__change--icon" icon={faChevronRight} onClick={handerSlider} />
@@ -68,12 +54,12 @@ function Content(props) {
         <div className="dear__grid-content grid">
           <div className={classes.root}>
             <Grid container className={classes.space} spacing={1}>
-              <Grid item xs={12} sm={2}>
+              <Grid item xs={2} >
                 <a href="/#">
                   <img alt="img" className="img_bn" src={st1} />
                 </a>
               </Grid>
-              <Grid item xs={12} sm={5} container>
+              <Grid item xs={5} container spacing={1}>
                 <Grid item xs={12} className={classes.top} >
                   <a href="/#">
                     <img alt="img" className="img_bn" src={st2} />
@@ -92,13 +78,13 @@ function Content(props) {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} sm={5} container>
+              <Grid item xs={5} container spacing={1}>
                 <Grid item xs={12} className={classes.top} >
                   <a href="/#">
                     <img alt="img" className="img_bn" src={st5} />
                   </a>
                 </Grid>
-                <Grid item xs={12} container >
+                <Grid item xs={12} container>
                   <Grid item xs={6} className={classes.right}>
                     <a href="/#">
                       <img alt="img" className="img_bn" src={st6} />

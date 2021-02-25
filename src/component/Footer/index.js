@@ -17,28 +17,28 @@ function Footer(props) {
         </div>
         <div className="dear__banner-img">
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/one.jpg')} />
           </div>
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/two.jpg')} />
           </div>
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/four.jpg')} />
           </div>
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/five.jpg')} />
           </div>
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/six.jpg')} />
           </div>
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/seven.jpg')} />
           </div>
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/eight.jpg')} />
           </div>
           <div className="banner-one">
-            <img alt="img" src={st1} />
+            <img alt="img" src={require('./../Image/baner_footer/ten.jpg')} />
           </div>
         </div>
       </div>

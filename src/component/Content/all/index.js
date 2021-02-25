@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './style.scss';
 import st2 from './../../Image/baner/st1.jpg';
@@ -7,6 +7,47 @@ import st4 from './../../Image/baner/st4.jpg';
 import arrow from './../../Image/arrow.jpg';
 import { cartProducts } from './../../Actions';
 import classNames from 'classnames';
+import gift from './../../Image/gift.png';
+import news from './../../Image/new.png';
+import Slider from "react-slick";
+import '../../slick/slick-theme.scss';
+import '../../slick/slick.scss';
+
+
+var settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 4,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: false,
+        dots: false
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 414,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }
+  ]
+};
 
 function All({ name }) {
   const dispatch = useDispatch();
@@ -75,6 +116,8 @@ function All({ name }) {
       msp: "DSMH03401XDG44"
     },
   ];
+
+
 
   const handerLeft = () => {
     if (sliderRun.right > 0) {
@@ -149,11 +192,25 @@ function All({ name }) {
             (boders.indexs === index) ? <button onClick={() => submitItem(key)}>Đặt Mua Ngay</button> : <button>Mua Hàng</button>
           }
         </div>
+        <div>
+          <img className="news_icon" src={news} />
+
+          <img className="gift_icon" src={gift} />
+        </div>
       </div>;
     });
     return b;
   }
 
+  const sliders = useRef();
+
+  const next = () => {
+    // slider.slickNext();
+    sliders.current.slickNext();
+  }
+  const previous = () => {
+    sliders.current.slickPrev();
+  }
   return (
     <div className="List">
       <div className="List__title">
@@ -166,10 +223,12 @@ function All({ name }) {
       <div className="List__item">
         <div className="List__item-slider">
           <div className="arrow_right">
-            <img alt="img" src={arrow} onClick={handerRight} />
+            <img alt="img" src={arrow} onClick={next} />
           </div>
-          {as()}
-          <div className="arrow_left" onClick={handerLeft}>
+          <Slider ref={sliders} {...settings}>
+            {as()}
+          </Slider>
+          <div className="arrow_left" onClick={previous}>
             <img alt="img" src={arrow} />
           </div>
         </div>

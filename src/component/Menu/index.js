@@ -15,7 +15,6 @@ function Menu(props) {
 
   const scrollMenu = () => {
     window.scrollY >= 130 ? setNavBar(true) : setNavBar(false);
-    // if (window.scrollY >= 130) window.scrollTo(0, 200);
   }
 
   window.addEventListener('scroll', scrollMenu);
@@ -27,7 +26,7 @@ function Menu(props) {
           <div className={classNames("mobile_menu", { showMenu: lock })} >
             <MobileMenu />
           </div>
-          <div className="black_right"></div>
+          <div className={classNames("black_right", { "showMenu": lock })} onClick={handlerMenu}></div>
         </div>
         <div className={classNames("Nav__menu grid ", { showMenus: lock })}>
           <div className="Nav__menu-iconMenu">

@@ -6,7 +6,45 @@ import st4 from './../../Image/baner/st4.jpg';
 import arrow from './../../Image/arrow.jpg';
 import logo_master from './../../Image/logo_master.jpg';
 import classNames from 'classnames';
+import Slider from "react-slick";
+import './../../slick/slick-theme.scss';
+import './../../slick/slick.scss';
+import { useRef } from 'react';
 
+var settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 4,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }
+  ]
+};
 function ListBuyGosto(props) {
   const [sliderRun, setSliderRun] = useState({
     right: 0
@@ -137,6 +175,16 @@ function ListBuyGosto(props) {
     return b;
   }
 
+  const sliders = useRef();
+
+  const next = () => {
+    // slider.slickNext();
+    sliders.current.slickNext();
+  }
+  const previous = () => {
+    sliders.current.slickPrev();
+  }
+
   return (
     <div className="List">
       <div className="List__title">
@@ -149,10 +197,12 @@ function ListBuyGosto(props) {
       <div className="List__item">
         <div className="List__item-slider">
           <div className="arrow_right">
-            <img alt="img" src={arrow} onClick={handerRight} />
+            <img alt="img" src={arrow} onClick={next} />
           </div>
-          {as()}
-          <div className="arrow_left" onClick={handerLeft}>
+          <Slider ref={sliders} {...settings}>
+            {as()}
+          </Slider>
+          <div className="arrow_left" onClick={previous}>
             <img alt="img" src={arrow} />
           </div>
         </div>

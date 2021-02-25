@@ -7,6 +7,11 @@ import Header from "./component/Header";
 import Menu from "./component/Menu";
 import PayLoad from './component/Payload';
 import Page from "./component/Router";
+import Slider from "react-slick";
+import './component/slick/slick-theme.scss';
+import './component/slick/slick.scss';
+import Homeload from './component/loading/homeload';
+
 
 function App() {
   const [checkPay, setCheckPay] = useState(false);
@@ -31,9 +36,9 @@ function App() {
   }
   return (
     <Router>
-      <Menu />
       <Header />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Menu />
+      <Suspense fallback={<Homeload />}>
         <Switch>
           {
             PageRouter(Page)
