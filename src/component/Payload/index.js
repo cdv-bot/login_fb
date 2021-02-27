@@ -1,12 +1,9 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import './style.scss';
-import Grid from '@material-ui/core/Grid';
 import { Paper } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
+import Grid from '@material-ui/core/Grid';
+import React from 'react';
+import './style.scss';
 
-function PayLoad({ hideHd }) {
-  const { id } = useParams();
+function PayLoad() {
   return (
     <div className="Pay">
       <div className="grid">

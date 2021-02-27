@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './style.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faHeart, faShoppingCart, faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
-import MobileMenu from './Mobile_Menu';
+import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import React, { useState } from 'react';
+import MobileMenu from './Mobile_Menu';
 import ProductItem from './productItem';
+import './style.scss';
 
 function Menu(props) {
   const [lock, setLock] = useState(false);

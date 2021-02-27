@@ -2,7 +2,6 @@ import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid from "@material-ui/core/Grid";
 import React from 'react';
-import st1 from './../Image/baner/st1.jpg';
 import dadangky from './../Image/dadangky.png';
 import logo_bitis from './../Image/logo_bitis.png';
 import HeThong from './he_thong';

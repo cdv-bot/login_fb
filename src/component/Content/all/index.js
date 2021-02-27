@@ -1,17 +1,15 @@
+import classNames from 'classnames';
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import './style.scss';
-import st2 from './../../Image/baner/st1.jpg';
-import st3 from './../../Image/baner/st3.jpg';
-import st4 from './../../Image/baner/st4.jpg';
-import arrow from './../../Image/arrow.jpg';
-import { cartProducts } from './../../Actions';
-import classNames from 'classnames';
-import gift from './../../Image/gift.png';
-import news from './../../Image/new.png';
 import Slider from "react-slick";
 import '../../slick/slick-theme.scss';
 import '../../slick/slick.scss';
+import { cartProducts } from './../../Actions';
+import arrow from './../../Image/arrow.jpg';
+import st2 from './../../Image/baner/st1.jpg';
+import gift from './../../Image/gift.png';
+import news from './../../Image/new.png';
+import './style.scss';
 
 
 var settings = {
@@ -51,9 +49,6 @@ var settings = {
 
 function All({ name }) {
   const dispatch = useDispatch();
-  const [sliderRun, setSliderRun] = useState({
-    right: 0
-  });
 
   const [boders, setBoder] = useState({
     boders: null,
@@ -118,29 +113,6 @@ function All({ name }) {
   ];
 
 
-
-  const handerLeft = () => {
-    if (sliderRun.right > 0) {
-      setSliderRun({
-        right: sliderRun.right - 200
-      });
-    } else {
-      setSliderRun({
-        right: arr.length * 200 - 5 * 200
-      });
-    }
-  }
-  const handerRight = () => {
-    if (arr.length * 200 - 5 * 200 > sliderRun.right) {
-      setSliderRun({
-        right: sliderRun.right + 200
-      })
-    } else {
-      setSliderRun({
-        right: 0
-      })
-    }
-  }
   const handerBoder = (x, y) => {
     setBoder({
       boders: x,
@@ -157,7 +129,7 @@ function All({ name }) {
   };
   const as = () => {
     let b = arr.map((key, index) => {
-      return <div className="List__item-one" style={{ transform: `translateX(-${sliderRun.right}px)` }} key={index}>
+      return <div className="List__item-one" key={index}>
         <a href={`/products/giay-the-thao-nam-biti-s-hunter-x-festive-aurora-black-dsmh03401xdg-xanh-duong`} className="link_img">
           <img alt="img" src={key.img} className="imgs" />
         </a>
@@ -193,9 +165,9 @@ function All({ name }) {
           }
         </div>
         <div>
-          <img className="news_icon" src={news} />
+          <img className="news_icon" alt="img" src={news} />
 
-          <img className="gift_icon" src={gift} />
+          <img className="gift_icon" alt="img" src={gift} />
         </div>
       </div>;
     });

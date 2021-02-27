@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import './style.scss';
+import classNames from 'classnames';
+import React, { useRef, useState } from 'react';
+import Slider from "react-slick";
+import arrow from './../../Image/arrow.jpg';
 import st2 from './../../Image/baner/st1.jpg';
 import st3 from './../../Image/baner/st3.jpg';
 import st4 from './../../Image/baner/st4.jpg';
-import arrow from './../../Image/arrow.jpg';
 import logo_master from './../../Image/logo_master.jpg';
-import classNames from 'classnames';
-import Slider from "react-slick";
 import './../../slick/slick-theme.scss';
 import './../../slick/slick.scss';
-import { useRef } from 'react';
+import './style.scss';
 
 var settings = {
   dots: false,
@@ -46,9 +45,7 @@ var settings = {
   ]
 };
 function ListBuyGosto(props) {
-  const [sliderRun, setSliderRun] = useState({
-    right: 0
-  });
+
 
   const [boders, setBoder] = useState({
     boders: null,
@@ -107,28 +104,6 @@ function ListBuyGosto(props) {
 
   ];
 
-  const handerLeft = () => {
-    if (sliderRun.right > 0) {
-      setSliderRun({
-        right: sliderRun.right - 200
-      });
-    } else {
-      setSliderRun({
-        right: arr.length * 200 - 5 * 200
-      });
-    }
-  }
-  const handerRight = () => {
-    if (arr.length * 200 - 5 * 200 > sliderRun.right) {
-      setSliderRun({
-        right: sliderRun.right + 200
-      })
-    } else {
-      setSliderRun({
-        right: 0
-      })
-    }
-  }
   const handerBoder = (x, y) => {
     setBoder({
       boders: x,
@@ -138,7 +113,7 @@ function ListBuyGosto(props) {
 
   const as = () => {
     let b = arr.map((key, index) => {
-      return <div className="List__item-one" style={{ transform: `translateX(-${sliderRun.right}px)` }} key={index}>
+      return <div className="List__item-one" key={index}>
         <a href="/#" className="link_img">
           <img alt="img" src={key.img} className="imgs" />
         </a>

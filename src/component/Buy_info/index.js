@@ -1,32 +1,18 @@
-import { faChevronRight, faChevronUp, faHome, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import './style.scss';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import zalo from './../Image/nam/zalopay.jpg';
+import React, { useState } from 'react';
+import { SideBySideMagnifier } from "react-image-magnifiers";
 import cod from './../Image/nam/cods.jpg';
 import mastercard from './../Image/nam/mastercard.jpg';
 import visa from './../Image/nam/visa.jpg';
-import {
-  Magnifier,
-  GlassMagnifier,
-  SideBySideMagnifier,
-  PictureInPictureMagnifier,
-  MOUSE_ACTIVATION,
-  TOUCH_ACTIVATION,
-  MagnifierContainer,
-  MagnifierPreview,
-  MagnifierZoom
-} from "react-image-magnifiers";
-import st2 from './../Image/img1.jpg';
+import zalo from './../Image/nam/zalopay.jpg';
+import './style.scss';
 
 const BuyInfo = () => {
   const [showImg, setShowImg] = useState(1);
   const [slides, setSlides] = useState(0);
 
-  const { id } = useParams();
   const handlerSliceDown = () => {
     if (-76 * 5 + slides !== -76 * 6) {
       setSlides(-76 + slides);
@@ -68,22 +54,22 @@ const BuyInfo = () => {
                 <div className="list-center">
                   <ul className="list-ul" style={{ transform: `translateY(${slides}px)` }}>
                     <li onClick={() => handerShow(1)}>
-                      <img src={require('./../Image/nam/1 (1).jpg')} />
+                      <img alt="img" src={require('./../Image/nam/1 (1).jpg')} />
                     </li>
                     <li onClick={() => handerShow(2)}>
-                      <img src={require('./../Image/nam/1 (4).jpg')} />
+                      <img alt="img" src={require('./../Image/nam/1 (4).jpg')} />
                     </li>
                     <li onClick={() => handerShow(5)}>
-                      <img src={require('./../Image/nam/1 (5).jpg')} />
+                      <img alt="img" src={require('./../Image/nam/1 (5).jpg')} />
                     </li>
                     <li onClick={() => handerShow(6)}>
-                      <img src={require('./../Image/nam/1 (6).jpg')} />
+                      <img alt="img" src={require('./../Image/nam/1 (6).jpg')} />
                     </li>
                     <li onClick={() => handerShow(7)}>
-                      <img src={require('./../Image/nam/1 (7).jpg')} />
+                      <img alt="img" src={require('./../Image/nam/1 (7).jpg')} />
                     </li>
                     <li onClick={() => handerShow(8)}>
-                      <img src={require('./../Image/nam/1 (8).jpg')} />
+                      <img alt="img" src={require('./../Image/nam/1 (8).jpg')} />
                     </li>
                   </ul>
                 </div>
@@ -103,7 +89,6 @@ const BuyInfo = () => {
                 switchSides={false}
                 inPlaceMinBreakpoint={400}
                 fillAvailableSpace={false}
-                inPlaceMinBreakpoint={300}
                 fillAlignTop={false}
                 cursorStyle="pointer"
                 zoomContainerBorder="1px solid #ccc"
@@ -127,7 +112,7 @@ const BuyInfo = () => {
                 <div className="color_product">
                   <p className="">Màu sắc</p>
                   <div className="img_color">
-                    <img src={require(`./../Image/nam/1 (${showImg}).jpg`)} />
+                    <img alt="img" src={require(`./../Image/nam/1 (${showImg}).jpg`)} />
                     <p>Xanh Dương</p>
                   </div>
                 </div>
@@ -156,7 +141,7 @@ const BuyInfo = () => {
                 </div>
                 <div className="bt_buy">
                   <button>MUA NGAY</button>
-                  <button> 🖤 Thêm vào yêu thích</button>
+                  <button> <span role="img" aria-label="Close a modal">🖤</span> Thêm vào yêu thích</button>
                 </div>
                 <div className="select__buy">
                   <div className="select__buy-text" >
@@ -166,17 +151,17 @@ const BuyInfo = () => {
                   </div>
                   <div className="select__buy-product">
                     <div className="img_select">
-                      <img src="http://product.hstatic.net/1000230642/product/4.jpg" />
+                      <img alt="img" src="http://product.hstatic.net/1000230642/product/4.jpg" />
                       <p>Combo 3 Đôi Vớ Biti's Hunter (màu ngẫu nhiên)</p>
                       <input type="checkbox" />
                     </div>
                     <div className="img_select">
-                      <img src="http://product.hstatic.net/1000230642/product/4.jpg" />
+                      <img alt="img" src="http://product.hstatic.net/1000230642/product/4.jpg" />
                       <p>Combo 3 Đôi Vớ Biti's Hunter (màu ngẫu nhiên)</p>
                       <input type="checkbox" />
                     </div>
                     <div className="img_select">
-                      <img src="http://product.hstatic.net/1000230642/product/4.jpg" />
+                      <img alt="img" src="http://product.hstatic.net/1000230642/product/4.jpg" />
                       <p>Combo 3 Đôi Vớ Biti's Hunter (màu ngẫu nhiên)</p>
                       <input type="checkbox" />
                     </div>
@@ -189,10 +174,10 @@ const BuyInfo = () => {
                 <div className="call">
                   <span>Tư vấn: 0966 158 666</span>
                   <div>
-                    <img src={zalo} />
-                    <img src={visa} />
-                    <img src={mastercard} />
-                    <img src={cod} />
+                    <img alt="img" src={zalo} />
+                    <img alt="img" src={visa} />
+                    <img alt="img" src={mastercard} />
+                    <img alt="img" src={cod} />
                   </div>
                 </div>
               </div>

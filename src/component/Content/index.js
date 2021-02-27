@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import productApi from './../apis/productsApi';
 import st1 from './../Image/baner/st1.jpg';
 import st2 from './../Image/baner/st2.jpg';
 import st3 from './../Image/baner/st3.jpg';
@@ -30,6 +31,23 @@ function Content(props) {
   const handerSlider = () => {
     setSliderLeft(!sliderLeft)
   };
+
+  // ----------------------
+  // const [productBoy, setProductBoy] = useState([]);
+
+  useEffect(() => {
+    const fetchProductList = async () => {
+      try {
+        const response = await productApi.getNam();
+        console.log('Fetch products successfully: ', response);
+
+      } catch (error) {
+        console.log('Failed to fetch product list: ', error);
+      }
+    }
+    fetchProductList();
+    // return <ProductList productList={productList} />;
+  }, [])
 
   return (
     <div className="dear">
